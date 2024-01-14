@@ -1,7 +1,7 @@
-import { FiShoppingCart } from "react-icons/fi";
+import { Link } from "react-router-dom"
 
 // eslint-disable-next-line react/prop-types
-const ItemList = ({name, src, price}) => {
+const ItemList = ({name, src, price, id}) => {
   return (
     <div className="item-list">
         <img src={src} alt="photo" />
@@ -9,7 +9,7 @@ const ItemList = ({name, src, price}) => {
             <h6 className="name"> {name} </h6>
             <p className="price">Precio:  ${price} </p>
             <div className="button-container">
-                <button>Agregar <FiShoppingCart /></button>
+            <Link to={`/detalle/${id}`}><button>Ver detalle</button></Link>
             </div>
         </div>
     </div>

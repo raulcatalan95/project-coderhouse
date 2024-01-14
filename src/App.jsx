@@ -1,7 +1,9 @@
 
 import './App.css'
-import ItemListContainer from './components/ItemListContainer';
+import ItemListContainer from './views/ItemListContainer';
+import ItemDetailContainer from './views/ItemDetailContainer';
 import Navbar from './components/Navbar';
+import ErrorRoute from './views/ErrorRoute';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 function App() {
@@ -12,6 +14,9 @@ function App() {
       <Routes>
         <Route path='/' element={<ItemListContainer />} />
         <Route path='/categoria/:category' element={<ItemListContainer />} />
+        <Route path='/detalle/:id' element={<ItemDetailContainer />} />
+        <Route path='/detalle/:id' element={<ItemDetailContainer />} />
+        <Route path='*' element={<ErrorRoute />} />
       </Routes>
     </BrowserRouter>
     </>

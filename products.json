@@ -1,6 +1,7 @@
 {
     "productos": [
       {
+        "id": 1,
         "tipo": "zapatos",
         "modelo": "Zapato Casual",
         "descripcion": "Zapato casual para uso diario",
@@ -8,6 +9,7 @@
         "img": "https://falabella.scene7.com/is/image/Falabella/50323705_1?wid=170&hei=170&qlt=70&fmt=webp"
       },
       {
+        "id": 2,
         "tipo": "zapatos",
         "modelo": "Zapato Deportivo",
         "descripcion": "Zapato deportivo ideal para actividades físicas",
@@ -15,6 +17,7 @@
         "img": "https://falabella.scene7.com/is/image/Falabella/gsc_113880334_804345_1?wid=170&hei=170&qlt=70&fmt=webp"
       },
       {
+        "id": 3,
         "tipo": "zapatos",
         "modelo": "Zapato Formal",
         "descripcion": "Zapato formal perfecto para eventos elegantes",
@@ -22,6 +25,7 @@
         "img": "https://falabella.scene7.com/is/image/Falabella/gsc_125985727_4400056_1?wid=170&hei=170&qlt=70&fmt=webp"
       },
       {
+        "id": 4,
         "tipo": "zapatillas",
         "modelo": "Zapatilla Deportiva",
         "descripcion": "Zapatilla deportiva cómoda y estilizada",
@@ -29,6 +33,7 @@
         "img": "https://falabella.scene7.com/is/image/Falabella/50008441_1?wid=240&hei=240&qlt=70&fmt=webp"
       },
       {
+        "id": 5,
         "tipo": "zapatillas",
         "modelo": "Zapatilla de Moda",
         "descripcion": "Zapatilla de moda para ocasiones casuales",
@@ -36,6 +41,7 @@
         "img": "https://falabella.scene7.com/is/image/Falabella/gsc_122525953_3365674_1?wid=240&hei=240&qlt=70&fmt=webp"
       },
       {
+        "id": 6,
         "tipo": "zapatillas",
         "modelo": "Zapatilla Casual",
         "descripcion": "Zapatilla casual con un toque moderno",
@@ -43,6 +49,7 @@
         "img": "https://falabella.scene7.com/is/image/Falabella/gsc_118468784_2113769_1?wid=240&hei=240&qlt=70&fmt=webp"
       },
       {
+        "id": 7,
         "tipo": "sandalias",
         "modelo": "Sandalia Playa",
         "descripcion": "Sandalia perfecta para días en la playa",
@@ -50,6 +57,7 @@
         "img": "https://falabella.scene7.com/is/image/Falabella/5166209_1?wid=170&hei=170&qlt=70&fmt=webp"
       },
       {
+        "id": 8,
         "tipo": "sandalias",
         "modelo": "Sandalia Elegante",
         "descripcion": "Sandalia elegante para eventos formales",
@@ -57,6 +65,7 @@
         "img": "https://falabella.scene7.com/is/image/Falabella/gsc_125494100_4329213_1?wid=800&hei=800&qlt=70"
       },
       {
+        "id": 9,
         "tipo": "sandalias",
         "modelo": "Sandalia Bohemia",
         "descripcion": "Sandalia bohemia con un toque artístico",

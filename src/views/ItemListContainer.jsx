@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ItemList from "./ItemList";
+import ItemList from "../components/ItemList";
 
 // eslint-disable-next-line react/prop-types
 const ItemListContainer = () => {
@@ -23,12 +23,12 @@ const ItemListContainer = () => {
         {
           !category ?
               allProducts.map((product, index) => (
-                <ItemList key={index} name={product.modelo} src={product.img} price={product.precio} />
+              <ItemList key={index} name={product.modelo} src={product.img} price={product.precio} id={product.id} />
               ))
            : 
             filterProducts.map((product, index) => 
             (
-              <ItemList key={index} name={product.modelo} src={product.img} price={product.precio} />
+              <ItemList key={index} name={product.modelo} src={product.img} price={product.precio} id={product.id} />
             )
           )
         }

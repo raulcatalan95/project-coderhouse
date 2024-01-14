@@ -1,4 +1,4 @@
-body, h1, h2, h3, h4, h5, h6 {
+body, h1, h2, h3, h4, h5, h6, p {
   margin: 0;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -64,7 +64,7 @@ body, h1, h2, h3, h4, h5, h6 {
   box-shadow: 5px 5px 10px 5px rgba(70, 69, 69, 0.1);
   border-radius: 4px;
   gap: 20px;
-  cursor: pointer;
+  color: #000;
 }
 .item-list:hover {
   box-shadow: 5px 5px 10px 2px rgba(70, 69, 69, 0.3);
@@ -79,6 +79,7 @@ body, h1, h2, h3, h4, h5, h6 {
   width: 100%;
 }
 .item-list .price {
+  margin-bottom: 8px;
   color: #636363;
 }
 
@@ -88,7 +89,10 @@ body, h1, h2, h3, h4, h5, h6 {
   padding-top: 16px;
   border-top: 1px solid rgb(165, 165, 165, 0.5);
 }
-.button-container button {
+.button-container a{
+  text-decoration: none;
+}
+button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -101,8 +105,101 @@ body, h1, h2, h3, h4, h5, h6 {
   color: #fff;
   border-radius: 8px;
 }
-.button-container button:hover {
+button:hover {
   background-color: #005fb8;
 }
 
 /* END ITEM LIST CONTAINER */
+
+/* ITEM DETAIL CONTAINER */
+
+.detail-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.detail-item {
+  display: flex;
+  margin-top: 32px;
+  border: 1px solid rgb(122, 117, 117, 0.1);
+  box-shadow: 5px 5px 10px 5px rgba(70, 69, 69, 0.1);
+  width: 60%;
+  height: 250px;
+  border-radius: 8px;
+}
+.detail-item h6, p {
+  color: #636363;
+}
+
+.detail-item .img-detail {
+  padding: 0 25px;
+  width: 200px;
+}
+.detail-item .img-detail img {
+  width: 100%;
+}
+.detail-item .content-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 50px 0 20px 50px;
+  width: 40%;
+}
+
+.add-cart {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 20px;
+  gap: 16px;
+}
+.add-cart h2 {
+  text-align: center;
+}
+.btn-add {
+  padding: 0 16px;
+  gap: 4px;
+  width: 100%;
+}
+.item-count {
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.item-count .count {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.btn-count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  color: #0079EC;
+  border: 1px solid #0079EC;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.btn-count:hover {
+  background-color: aliceblue;
+}
+
+.input-count {
+  width: 30px;
+  margin: 0 1px;
+  border: 1px solid #0079EC;
+  border-radius: 4px;
+  text-align: center;
+}
+.input-count:focus-visible {
+  border: 1px solid #0079EC;
+}
+.input-count:active {
+  border: 1px solid #0079EC;
+}
+/* END ITEM DETAIL CONTAINER */
