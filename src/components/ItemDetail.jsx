@@ -1,22 +1,21 @@
 import ItemCount from "./ItemCount"
 
-// eslint-disable-next-line react/prop-types
-const ItemDetail = ({img, modelo, tipo, descripcion, precio}) => {
+const ItemDetail = ( {productDetail} ) => {
   return (
     <div className="detail-item">
             <div className="img-detail">
-                <img src={img} alt="Photo" />
+                <img src={productDetail.img} alt="Photo" />
             </div>
             <div className="content-detail">
                 <div>
-                    <h4>{modelo}</h4>
-                    <h6>Categoria: {tipo}</h6>
+                    <h4>{productDetail.modelo}</h4>
+                    <h6>Categoria: {productDetail.tipo}</h6>
                 </div>
-                <p>{descripcion}</p>
+                <p>{productDetail.descripcion}</p>
             </div>
             <div className="add-cart">
-                <h2>$ {precio}</h2>
-                <ItemCount />
+                <h2>$ {productDetail.precio}</h2>
+                <ItemCount productDetail={productDetail} />
             </div>
         </div>
   )

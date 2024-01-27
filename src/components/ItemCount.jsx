@@ -1,7 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { FiShoppingCart } from "react-icons/fi";
+import { CartContext } from "../context/CartContext";
 
-const ItemCount = () => {
+
+const ItemCount = ({productDetail}) => {
+  const { addToCart } = useContext(CartContext);
   const [count, setCount] = useState(1);
   
   const operationCount = (operation) => {
@@ -13,6 +16,7 @@ const ItemCount = () => {
         setCount(count + 1);
     }
   }
+
   return (
     <div className="item-count">
         <div className="count">
@@ -20,7 +24,7 @@ const ItemCount = () => {
              <input className="input-count" type="text" value={count} onChange={e => setCount(e.target.value)} />
              <button onClick={() => operationCount('sum')} className="btn-count">+</button>
         </div>
-      <button className="btn-add">Agregar al carro <FiShoppingCart/> </button>
+      <button className="btn-add" onClick={() => addToCart({...productDetail, cantidad: count})}>Agregar al carro <FiShoppingCart/> </button>
     </div>
   )
 }

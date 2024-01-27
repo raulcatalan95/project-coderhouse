@@ -14,6 +14,7 @@ const ItemDetailContainer = () => {
       setProductDetail(product);
     });
   }, [id]);
+
   return (
     <div className="detail-container">
         <ItemDetail 
@@ -22,23 +23,9 @@ const ItemDetailContainer = () => {
             tipo={productDetail.tipo}
             descripcion={productDetail.descripcion}
             precio={productDetail.precio}
+            id={productDetail.id}
+            productDetail={productDetail}
         />
-        {/* <div className="detail-item">
-            <div className="img-detail">
-                <img src={productDetail.img} alt="Photo" />
-            </div>
-            <div className="content-detail">
-                <div>
-                    <h4>{productDetail.modelo}</h4>
-                    <h6>Categoria: {productDetail.tipo}</h6>
-                </div>
-                <p>{productDetail.descripcion}</p>
-            </div>
-            <div className="add-cart">
-                <h2>$ {productDetail.precio}</h2>
-                <button className="btn-add">Agregar al carro <FiShoppingCart/> </button>
-            </div>
-        </div> */}
     </div>
   )
 }
