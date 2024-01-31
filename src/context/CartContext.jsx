@@ -12,6 +12,17 @@ export const CartContextProvider = ({ children }) => {
     setProductsCart([...productsCart, newProduct]);
     console.log(newProduct);
   };
+
+  function editCounterInCart(product, newCount) {
+    const arrayEditCount = productsCart.map((item) => {
+      if (item.id === product.id) {
+        item.cantidad = newCount;
+        item.total = (item.cantidad * Number(item.precio));
+      }
+      return item;
+    })
+    setProductsCart(arrayEditCount)
+  };
   
   function productsCount() {
     const count = productsCart.reduce((acc, curr) => acc + curr.cantidad, 0);
@@ -19,7 +30,7 @@ export const CartContextProvider = ({ children }) => {
  };
 
   return (
-    <CartContext.Provider value={{productsCart, setProductsCart, addToCart, productsCounter, productsCount}}>
+    <CartContext.Provider value={{productsCart, setProductsCart, addToCart, productsCounter, productsCount, editCounterInCart}}>
         {children}
     </CartContext.Provider>
   )

@@ -1,6 +1,8 @@
 import { FiShoppingCart } from "react-icons/fi";
 import { useContext, useEffect } from "react";
 import { CartContext } from "../context/CartContext";
+import { Link } from "react-router-dom"
+
 
 const CardWidget = () => {
   const { productsCart, productsCount, productsCounter } = useContext(CartContext);
@@ -11,8 +13,13 @@ const CardWidget = () => {
   
   return (
     <div className="cart">
-        <div className="count-cart">{productsCounter}</div>
+      <Link to={`/carro`}>
+        {
+          productsCart.length > 0 &&
+            <div className="count-cart">{productsCounter}</div>
+        }
         <FiShoppingCart />
+      </Link>
     </div>
   )
 }
