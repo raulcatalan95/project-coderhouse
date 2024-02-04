@@ -13,6 +13,11 @@ export const CartContextProvider = ({ children }) => {
     console.log(newProduct);
   };
 
+  function deleteProductCart(selectProduct) {
+    const deleteProduct = productsCart.filter(product => product.id !== selectProduct.id)
+    setProductsCart(deleteProduct);
+  };
+
   function editCounterInCart(product, newCount) {
     const arrayEditCount = productsCart.map((item) => {
       if (item.id === product.id) {
@@ -30,7 +35,7 @@ export const CartContextProvider = ({ children }) => {
  };
 
   return (
-    <CartContext.Provider value={{productsCart, setProductsCart, addToCart, productsCounter, productsCount, editCounterInCart}}>
+    <CartContext.Provider value={{productsCart, setProductsCart, addToCart, productsCounter, productsCount, editCounterInCart, deleteProductCart}}>
         {children}
     </CartContext.Provider>
   )

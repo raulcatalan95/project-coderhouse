@@ -2,6 +2,8 @@ import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../context/CartContext";
 import WithoutCart from "../components/WithoutCart";
 import CartProduct from "../components/CartProduct";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const CartContainer = () => {
   const { productsCart, productsCount, productsCounter } = useContext(CartContext);
@@ -15,6 +17,7 @@ const CartContainer = () => {
 
   return (
     <div className="cart-container">
+      <ToastContainer />
         {
             productsCart.length > 0
             ?

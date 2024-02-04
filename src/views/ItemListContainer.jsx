@@ -1,36 +1,31 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "../components/ItemList";
+import { collection, getDocs, query, where } from 'firebase/firestore/lite';
+import { db } from ".././firebaseConfig";
 
 // eslint-disable-next-line react/prop-types
 const ItemListContainer = () => {
   const [allProducts, setAllProducts] = useState([]);
-  const [filterProducts, setFilterProducts] = useState([]);
   const { category } = useParams();
 
   useEffect(() => {
-    fetch('../../products.json')
-    .then((response) => response.json())
-    .then((data) => {
-      setAllProducts(data.productos);
-      const dataFilter =  data.productos.filter((product) => product.tipo === category);
-      setFilterProducts(dataFilter);
-    });
+    const productsCollection = category
+      ? query(collection(db, "productos"), where("tipo", "==", category))
+      : collection(db, 'productos');
+    getDocs(productsCollection)
+      .then((res) => {
+        const products = res.docs.map(doc => doc.data());
+        setAllProducts(products);
+      })
   }, [category]);
 
   return (
     <div className="item-list-container">
         {
-          !category ?
-              allProducts.map((product, index) => (
-              <ItemList key={index} name={product.modelo} src={product.img} price={product.precio} id={product.id} />
-              ))
-           : 
-            filterProducts.map((product, index) => 
-            (
-              <ItemList key={index} name={product.modelo} src={product.img} price={product.precio} id={product.id} />
-            )
-          )
+          allProducts.map((product, index) => (
+          <ItemList key={index} name={product.modelo} src={product.img} price={product.precio} id={product.id} />
+          ))
         }
     </div>
   )
