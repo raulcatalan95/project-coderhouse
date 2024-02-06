@@ -4,13 +4,13 @@ import ItemDetail from "../components/ItemDetail";
 import { CartContext } from "../context/CartContext";
 import { collection, getDocs, query, where, doc } from 'firebase/firestore/lite';
 import { db } from ".././firebaseConfig";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Loader from "../components/components_ui/Loader";
 
 const ItemDetailContainer = () => {
+  const [loading, setLoading] = useState(true);
   const [productDetail, setProductDetail] = useState({});
-  const { productsCart } = useContext(CartContext);
-  const [ isInCart, setInCart] = useState(false);
   const { id } = useParams();
   
   useEffect(() => {
@@ -20,14 +20,20 @@ const ItemDetailContainer = () => {
         const product = res.docs.map(doc => doc.data());
         setProductDetail(product[0]);
       })
+      .catch((err) => err)
+      .finally(() => {
+        setLoading(false);
+      })
     }, [id]);
 
   return (
     <div className="detail-container">
       <ToastContainer />
-        <ItemDetail 
-            productDetail={productDetail}
-        />
+      {
+        loading
+        ? <Loader />
+        : <ItemDetail productDetail={productDetail} />
+      }
     </div>
   )
 }

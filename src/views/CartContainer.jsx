@@ -34,7 +34,7 @@ const CartContainer = () => {
             <div className="detail-total-cart">
                <h6>Cantidad de productos: <span>{productsCounter}</span></h6> 
                <h6>Total compra: <span>${totalCompra}</span></h6> 
-               <button>Confirmar compra</button>
+               <button>Continuar compra</button>
             </div>
         }
     </div>
