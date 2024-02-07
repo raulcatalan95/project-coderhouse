@@ -128,6 +128,7 @@ body, h1, h2, h3, h4, h5, h6, p {
   width: 100%;
 }
 .detail-item {
+  position: relative;
   display: flex;
   margin-top: 32px;
   border: 1px solid rgb(122, 117, 117, 0.1);
@@ -323,4 +324,105 @@ a {
 }
 .gap-10 {
   gap: 10px;
+}
+
+.loader-container {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.without-stock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 24px;
+  font-weight: 700;
+  gap: 16px;
+}
+.without-stock button {
+  width: 100%;
+}
+
+.main-checkout {
+  display: flex;
+  margin-top: 50px;
+}
+
+.container-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+.container-form h4 {
+  margin-bottom: 16px;
+  color: #424141;
+}
+.container-form form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.container-form form .input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 50%;
+}
+.container-form form .input-group input {
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid rgb(170, 170, 170);
+  padding: 0 8px;
+}
+.button-form {
+  width: 50%;
+}
+
+.card-checkout {
+  display: flex;
+  align-items: center;
+  width: 400px;
+  gap: 60px;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(170, 167, 167, 0.5);
+}
+.card-checkout img{
+  width: 100px;
+  height: 100px;
+}
+.card-checkout__detail {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+button:disabled {
+  pointer-events: none;
+  opacity: 0.5;
 }

@@ -16,6 +16,13 @@ const ItemDetail = ( {productDetail} ) => {
 
   return (
     <div className="detail-item">
+      {
+        productDetail.stock <= 0 &&
+          <div className="without-stock">
+            <h4>¡Ups! Producto sin stock</h4>
+            <Link to={'/'}><button>Seleccionar otro producto</button></Link>
+          </div>
+      }
             <div className="img-detail">
                 <img src={productDetail.img} alt="Photo" />
             </div>
