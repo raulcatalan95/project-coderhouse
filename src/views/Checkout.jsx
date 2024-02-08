@@ -55,12 +55,12 @@ if (productsCart.length <= 0) {
                         <h4>{product.modelo}</h4>
                         <p>Precio: ${product.precio}</p>
                         <p>Cantidad: {product.cantidad}</p>
-                        <p>Total: ${product.total}</p>
+                        <p>Total: ${product.total.toFixed(2)}</p>
                     </div>
                 </div>
             ))
         }
-        <h4>Total compra: ${totalValue}</h4>
+        <h4>Total compra: ${totalValue.toFixed(2)}</h4>
         <div>
         </div>
       </div>
