@@ -7,7 +7,7 @@ const Navbar = () => {
       <nav className="navbar">
         <div className="nav-left">
           <NavLink to="/">
-            <h2>Ecommerce</h2>
+            <h2>IShoes</h2>
           </NavLink>
           <NavLink to="/categoria/zapatillas">
             Zapatillas
