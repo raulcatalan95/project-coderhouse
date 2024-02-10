@@ -16,7 +16,12 @@ const ItemDetailContainer = () => {
     const productsCollection = id && query(collection(db, "productos"), where("id", "==", Number(id)))
     getDocs(productsCollection)
       .then((res) => {
-        const product = res.docs.map(doc => doc.data());
+        const product = res.docs.map(doc => {
+          return {
+            ...doc.data(),
+            idStore: doc.id
+          }
+        });
         setProductDetail(product[0]);
       })
       .catch((err) => err)
