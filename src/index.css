@@ -430,3 +430,25 @@ button:disabled {
   color: rgb(212, 0, 0);
   font-size: 11px;
 }
+
+.success-buy {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80px;
+  gap: 16px;
+}
+.success-buy svg {
+  height: 50px;
+  width: 50px;
+  color: green;
+}
+.success-buy button {
+  width: 300px;
+}
+.success-buy span {
+  color: #424141;
+  font-weight: 600;
+}

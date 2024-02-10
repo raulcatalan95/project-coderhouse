@@ -17,7 +17,12 @@ const ItemListContainer = () => {
       : collection(db, 'productos');
     getDocs(productsCollection)
       .then((res) => {
-        const products = res.docs.map(doc => doc.data());
+        const products = res.docs.map((doc) => {
+          return {
+            ...doc.data(),
+            idStore: doc.id,
+          }
+        })
         setAllProducts(products);
       })
       .catch(err => err)
